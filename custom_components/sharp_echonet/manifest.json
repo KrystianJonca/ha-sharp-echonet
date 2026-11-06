@@ -1,0 +1,12 @@
+{
+  "domain": "sharp_echonet",
+  "name": "Sharp Air Purifier (ECHONET Lite, local)",
+  "codeowners": ["@KrystianJonca"],
+  "config_flow": true,
+  "documentation": "https://github.com/KrystianJonca/ha-sharp-echonet",
+  "integration_type": "device",
+  "iot_class": "local_polling",
+  "issue_tracker": "https://github.com/KrystianJonca/ha-sharp-echonet/issues",
+  "requirements": [],
+  "version": "0.1.0"
+}

@@ -1,0 +1,82 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Oczyszczacz powietrza Sharp",
+        "description": "Sterowanie lokalne przez ECHONET Lite (UDP 3610). Obsługiwany model: {model}.",
+        "data": {
+          "host": "Adres IP"
+        },
+        "data_description": {
+          "host": "Ustaw dla oczyszczacza stały adres (rezerwację DHCP), aby ten adres się nie zmieniał."
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Brak odpowiedzi ECHONET Lite z tego adresu. Sprawdź adres IP oraz czy zapora serwera przepuszcza UDP 3610 od oczyszczacza.",
+      "port_in_use": "Port UDP 3610 jest już zajęty na tym serwerze (inna integracja ECHONET Lite?).",
+      "unsupported_model": "Urządzenie zgłasza model {model}; ta integracja jest sprawdzona tylko z KIN42.",
+      "invalid_host": "Podaj sam adres IPv4, np. 192.168.1.50 (bez nazwy hosta)."
+    },
+    "abort": {
+      "already_configured": "Ten oczyszczacz jest już skonfigurowany (jego adres IP został zaktualizowany)."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Odpytywanie",
+        "data": {
+          "scan_interval": "Interwał odpytywania"
+        },
+        "data_description": {
+          "scan_interval": "Stan jest odpytywany (powiadomienia wymagają multicastu ECHONET, który wiele routerów blokuje), więc naciśnięcia przycisków na urządzeniu pojawią się najpóźniej po tym czasie. Zmiany z Home Assistanta są odczytywane po ok. 2 s."
+        }
+      }
+    }
+  },
+  "entity": {
+    "fan": {
+      "purifier": {
+        "state_attributes": {
+          "preset_mode": {
+            "state": {
+              "auto": "Auto",
+              "ai_auto": "AI Auto",
+              "night": "Nocny",
+              "pollen": "Pyłki",
+              "plasmacluster": "Plasmacluster",
+              "silent": "Cichy",
+              "medium": "Średni",
+              "high": "Wysoki"
+            }
+          }
+        }
+      }
+    },
+    "switch": {
+      "humidify": {
+        "name": "Nawilżanie"
+      }
+    },
+    "binary_sensor": {
+      "pollution": {
+        "name": "Zanieczyszczenie powietrza"
+      },
+      "tank_empty": {
+        "name": "Pusty zbiornik na wodę"
+      },
+      "fault": {
+        "name": "Usterka"
+      }
+    },
+    "sensor": {
+      "air_quality_level": {
+        "name": "Poziom jakości powietrza"
+      },
+      "filter_usage": {
+        "name": "Licznik użycia filtra"
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "entity": {
+    "fan": { "purifier": { "default": "mdi:air-purifier", "state_attributes": { "preset_mode": { "default": "mdi:fan", "state": { "auto": "mdi:fan-auto", "ai_auto": "mdi:robot", "night": "mdi:weather-night", "pollen": "mdi:flower-pollen", "plasmacluster": "mdi:creation", "silent": "mdi:fan-speed-1", "medium": "mdi:fan-speed-2", "high": "mdi:fan-speed-3" } } } } },
+    "switch": { "humidify": { "default": "mdi:air-humidifier", "state": { "off": "mdi:air-humidifier-off" } } },
+    "binary_sensor": { "pollution": { "default": "mdi:weather-dust" }, "tank_empty": { "default": "mdi:water-check", "state": { "on": "mdi:water-off" } } },
+    "sensor": { "air_quality_level": { "default": "mdi:blur" }, "filter_usage": { "default": "mdi:air-filter" } }
+  }
+}

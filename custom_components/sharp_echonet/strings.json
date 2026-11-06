@@ -1,0 +1,82 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Sharp air purifier",
+        "description": "Local control over ECHONET Lite (UDP 3610). Supported model: {model}.",
+        "data": {
+          "host": "IP address"
+        },
+        "data_description": {
+          "host": "Give the purifier a DHCP reservation so this address does not change."
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "No ECHONET Lite reply from that address. Check the IP and that UDP 3610 from the purifier is allowed by the server firewall.",
+      "port_in_use": "UDP port 3610 is already in use on this server (another ECHONET Lite integration?).",
+      "unsupported_model": "The device reports model {model}; this integration is only verified on KIN42.",
+      "invalid_host": "Enter a plain IPv4 address, e.g. 192.168.1.50 (no hostname)."
+    },
+    "abort": {
+      "already_configured": "This purifier is already configured (its IP address was updated)."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Polling",
+        "data": {
+          "scan_interval": "Poll interval"
+        },
+        "data_description": {
+          "scan_interval": "State is polled (push needs ECHONET multicast, which many home routers drop), so button presses on the unit show up after at most this long. Changes made from Home Assistant are read back after ~2 s."
+        }
+      }
+    }
+  },
+  "entity": {
+    "fan": {
+      "purifier": {
+        "state_attributes": {
+          "preset_mode": {
+            "state": {
+              "auto": "Auto",
+              "ai_auto": "AI Auto",
+              "night": "Night",
+              "pollen": "Pollen",
+              "plasmacluster": "Plasmacluster",
+              "silent": "Silent",
+              "medium": "Medium",
+              "high": "High"
+            }
+          }
+        }
+      }
+    },
+    "switch": {
+      "humidify": {
+        "name": "Humidify"
+      }
+    },
+    "binary_sensor": {
+      "pollution": {
+        "name": "Air pollution"
+      },
+      "tank_empty": {
+        "name": "Water tank empty"
+      },
+      "fault": {
+        "name": "Fault"
+      }
+    },
+    "sensor": {
+      "air_quality_level": {
+        "name": "Air quality level"
+      },
+      "filter_usage": {
+        "name": "Filter usage counter"
+      }
+    }
+  }
+}
